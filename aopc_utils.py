@@ -19,19 +19,17 @@ def compute_perturbations(sentences, weights, pred_labels, pred_probs, tokenizer
 								break
 						words_to_remove.append(word_index)
 						new_text = [token for i, token in enumerate(tokenizer.convert_tokens_to_ids(text)) if i not in words_to_remove][:max_length - 2]
-						#print('filter text: ', new_text)
+						
 						num_pads = max_length - len(new_text) - 2
 						ids = [START[backbone]] + new_text + [END[backbone]] + [PAD[backbone]]*num_pads
-						if len(ids) == 58:
-							print(len(new_text), num_pads, 2+ len(new_text) + num_pads, len(ids))
+						
 						attention = [1]*(len(new_text)+2) + [0]*num_pads
 						ids = torch.LongTensor(ids).unsqueeze(0).to(device)
 						attention = torch.LongTensor(attention).unsqueeze(0).to(device)
-						#print('ids: ', ids)
-						#print('attention: ', attention)
+						
 						prediction_prob.append(pred_probs[text_no])
 						prediction_label.append(pred_labels[text_no])
-						#print('probs, labels: ', prediction_prob, prediction_label)
+						
 						input_dict['input_ids'].append(ids)
 						input_dict['attention_mask'].append(attention)
 		input_dict['input_ids'] = torch.cat(input_dict['input_ids'], dim = 0)
@@ -57,7 +55,7 @@ def AOPC(all_sentences, weights, all_prediction, all_probs, model, tokenizer, ar
 				#print(end)
 				orig_probs, orig_labels, input_dict = compute_perturbations(all_sentences[start:end], weights[start:end], all_prediction[start:end], all_probs[start:end], tokenizer, L, args.max_sent_len, args.device, args.backbone)
 				curr_delta = aopc_per_batch(orig_probs, orig_labels, input_dict, model, args, L)
-				print(curr_delta)
+				#print(curr_delta)
 				delta += curr_delta
 				start = end
 				end += args.per_gpu_eval_batch_size

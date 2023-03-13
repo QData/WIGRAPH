@@ -125,8 +125,7 @@ def get_args():
 
         variable_params = params(args)
         variable_params_string = variable_params.save_string()
-        args.save_name =  variable_params_string + args.save_name + '/' 
-        if args.new_set: args.save_name + datetime.datetime.now() #args.task_name + str(args.lambda_s) + '_' + str(args.lambda_g) + '_' +str(args.lambda_i) + '_' +str(args.imask_layers)  +'_mask_hidden_'+str(args.mask_hidden_dim)+'/'
+        
         os.makedirs(os.path.join(args.save_dir, args.save_name), exist_ok = True)
         print('saving in: ', os.path.join(args.save_dir, args.save_name))
         
