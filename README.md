@@ -19,11 +19,11 @@ Recent NLP literature has seen growing interest in improving model interpretabil
 ## Prerequisites
 
 The `data` folder contains the dataset that are used for WIGRAPH. 
-The datasets used can be downloaded from : [datasets link](https://drive.google.com/file/d/1id1F7N9vXbpL3Y8Omhq2zosT_MTxOT8A/view?usp=share_link)
+The datasets used can be downloaded from : [datasets link](https://drive.google.com/file/d/1id1F7N9vXbpL3Y8Omhq2zosT_MTxOT8A/view?usp=share_link). To run the code, save these in `data` folder.
 
-The `metadata` folder contains precomputed counts of words and interactions and are used to extract a subset of words and interactions used to learn the model. These can be downloaded from [metadata link(precomputed counts)](https://drive.google.com/file/d/1CDQUYJZ7CV_33OU9Or-Q17E2wiCh6o0z/view?usp=share_link).
+The `metadata` folder contains precomputed counts of words and interactions and are used to extract a subset of words and interactions used to learn the model. These can be downloaded from [metadata link(precomputed counts)](https://drive.google.com/file/d/1CDQUYJZ7CV_33OU9Or-Q17E2wiCh6o0z/view?usp=share_link). After downloading, save these in `metadata`. 
 
-The `models` used here as classifiers can be downloaded from : [finetuned models](https://drive.google.com/file/d/1id1F7N9vXbpL3Y8Omhq2zosT_MTxOT8A/view?usp=share_link)
+The `models` used here as classifiers can be downloaded from : [finetuned models](https://drive.google.com/file/d/1id1F7N9vXbpL3Y8Omhq2zosT_MTxOT8A/view?usp=share_link). After downloading, save these in `finedtuned_models/`
 
 ## Training 
 
@@ -56,4 +56,4 @@ interpret.py --per_gpu_train_batch_size 32 --per_gpu_eval_batch_size 64 --task-n
 aopc.py --per_gpu_train_batch_size 32 --per_gpu_eval_batch_size 64 --task-name sst2 --learning_rate 1e-05 --factor 1000.0 --mask-hidden-dim 32 --backbone distilbert  --save-dir results/distilbert/ --init-mode static --beta-i 0.0 --beta-g 1.0 --beta-s 1.0 --imask-dropout 0.3 --project WIGRAPH --non-linearity gelu --num_train_epochs 10 --seed 42 --onlyA --max_sent_len 56 --no-save --anneal
 ``
 
-- The hyperparameters for both the above are the same as the training hyperparameters.
+- The hyperparameters for both the above are the same as the training hyperparameters used for training the model.
