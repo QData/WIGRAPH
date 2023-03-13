@@ -23,7 +23,7 @@ The datasets used can be downloaded from : [datasets link](https://drive.google.
 
 The `metadata` folder contains precomputed counts of words and interactions and are used to extract a subset of words and interactions used to learn the model. These can be downloaded from [metadata link(precomputed counts)](https://drive.google.com/file/d/1CDQUYJZ7CV_33OU9Or-Q17E2wiCh6o0z/view?usp=share_link).
 
-The models used here as classifiers can be downloaded from : [finetuned models](https://drive.google.com/file/d/1id1F7N9vXbpL3Y8Omhq2zosT_MTxOT8A/view?usp=share_link)
+The `models` used here as classifiers can be downloaded from : [finetuned models](https://drive.google.com/file/d/1id1F7N9vXbpL3Y8Omhq2zosT_MTxOT8A/view?usp=share_link)
 
 ## Training 
 
