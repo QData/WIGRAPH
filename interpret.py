@@ -16,8 +16,8 @@ from mask_model import *
 import numpy as np
 import wandb
 import pandas as pd
-from lime.lime_utils import *
-from shap.shap_utils import *
+from interpret_lime.lime_utils import *
+from interpret_shap.shap_utils import *
 
 
 from mask_model import *    
