@@ -1,6 +1,8 @@
 # WIGRAPH
 This repo contains code for the paper ``Improving Interpretability via Explicit Word Interaction Graph Layer`` published in AAAI 2023. 
 
+https://arxiv.org/abs/2302.02016 
+
 Recent NLP literature has seen growing interest in improving model interpretability. Along this direction, we propose a trainable neural network layer that learns a global interaction graph between words and then selects more informative words using the learned word interactions. Our layer, we call WIGRAPH, can plug into any neural network-based NLP text classifiers right after its word embedding layer. Adding the WIGRAPH layer substantially improves NLP models' interpretability and enhances models' prediction performance at the same time.
 
 ``
